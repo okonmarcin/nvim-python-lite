@@ -22,5 +22,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'folke/tokyonight.nvim'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 call plug#end()
 
