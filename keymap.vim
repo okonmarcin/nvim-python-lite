@@ -1,6 +1,6 @@
 "Change leader key
 let mapleader = " "
-
+nnoremap ; :
 "Telescope Key Bindings
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
