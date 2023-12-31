@@ -10,4 +10,4 @@ set background=dark
 set splitbelow
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
 set number
-
+set guicursor=i:block

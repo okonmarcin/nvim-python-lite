@@ -24,5 +24,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'folke/tokyonight.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
