@@ -10,6 +10,10 @@ require("nvim-tree").setup()
 
 -- OR setup with some options
 require("nvim-tree").setup({
+  sync_root_with_cwd = false,
+  update_focused_file = {
+    enable = true
+  },
   sort = {
     sorter = "case_sensitive",
   },
