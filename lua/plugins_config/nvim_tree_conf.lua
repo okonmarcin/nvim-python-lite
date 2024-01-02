@@ -15,11 +15,11 @@ end
 
 
 nvim_tree_events.subscribe('TreeOpen', function()
-	barbar_api.set_offset(get_tree_size())
+	barbar_api.set_offset(get_tree_size()+1)
 end)
 
 nvim_tree_events.subscribe('Resize', function()
-	barbar_api.set_offset(get_tree_size())
+	barbar_api.set_offset(get_tree_size()+1)
 end)
 
 nvim_tree_events.subscribe("TreeClose", function()
