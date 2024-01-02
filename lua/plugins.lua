@@ -41,37 +41,35 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	use ("wbthomason/packer.nvim") -- Have packer manage itself	
-	use ('davidhalter/jedi-vim') 
-	use ('jiangmiao/auto-pairs') 
-	use ('scrooloose/nerdcommenter') 
-	use ('sbdchd/neoformat') 
-	use ('neomake/neomake') 
-	use ('terryma/vim-multiple-cursors') 
-	use ('machakann/vim-highlightedyank') 
-	use ('nvim-lua/plenary.nvim') 
+	use ('davidhalter/jedi-vim')
+	use ('jiangmiao/auto-pairs')
+	use ('scrooloose/nerdcommenter')
+	use ('sbdchd/neoformat')
+	use ('neomake/neomake')
+	use ('terryma/vim-multiple-cursors')
+	use ('machakann/vim-highlightedyank')
+	use ('nvim-lua/plenary.nvim')
 	use {
 	    'nvim-treesitter/nvim-treesitter',
 	    run = ':TSUpdate'
 	}
 	use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
-	-- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
-	use ('tpope/vim-fugitive') 
-	use ('lewis6991/gitsigns.nvim') 
-	use ('nvim-tree/nvim-web-devicons') 
-	use ('romgrk/barbar.nvim') 
-	use ('folke/tokyonight.nvim') 
-	use ('tpope/vim-fugitive') 
-	use ('junegunn/gv.vim') 
-	use ('ThePrimeagen/vim-be-good') 
+	use ('lewis6991/gitsigns.nvim')
+	use ('romgrk/barbar.nvim')
+	use ('folke/tokyonight.nvim')
+	use ('tpope/vim-fugitive')
+	use ('junegunn/gv.vim')
+	use ('ThePrimeagen/vim-be-good')
 	use {
 		"SmiteshP/nvim-gps",
 		requires = "nvim-treesitter/nvim-treesitter"
 	}
 	use ('nvim-tree/nvim-tree.lua')
 	use ('nvim-tree/nvim-web-devicons')
+	use ('neovim/nvim-lspconfig')
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
