@@ -3,7 +3,6 @@
 vim.g.mapleader = ' '
 
 vim.keymap.set('n', ';', ':')
-
 vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true, noremap = true})
 
 -- Telescope Key Bindings
