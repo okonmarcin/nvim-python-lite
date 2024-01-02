@@ -8,7 +8,7 @@ vim.o.background = 'dark'
 vim.o.splitbelow = true
 vim.wo.number = true
 vim.o.guicursor = 'i:block'
-require'bufferline.state'.set_offset(31, 'FileTree')
+--:require('bufferline.state').set_offset(31, 'FileTree')
 
 vim.api.nvim_create_autocmd({"InsertLeave", "CompleteDone"}, {
     pattern = "*",

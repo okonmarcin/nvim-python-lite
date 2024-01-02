@@ -2,8 +2,9 @@
 -- Change leader key
 vim.g.mapleader = ' '
 
+local map = vim.api.nvim_set_keymap
 vim.keymap.set('n', ';', ':')
-vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true, noremap = true})
+map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true, noremap = true})
 
 -- Telescope Key Bindings
 local builtin = require('telescope.builtin')
@@ -11,9 +12,9 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-
+vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
+vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
 -- Barbar Key Bidings
-local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
