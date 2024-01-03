@@ -41,11 +41,9 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	use ("wbthomason/packer.nvim") -- Have packer manage itself	
-	use ('davidhalter/jedi-vim')
 	use ('jiangmiao/auto-pairs')
 	use ('scrooloose/nerdcommenter')
 	use ('sbdchd/neoformat')
-	use ('neomake/neomake')
 	use ('terryma/vim-multiple-cursors')
 	use ('machakann/vim-highlightedyank')
 	use ('nvim-lua/plenary.nvim')
@@ -69,11 +67,16 @@ return packer.startup(function(use)
 	}
 	use ('nvim-tree/nvim-tree.lua')
 	use ('nvim-tree/nvim-web-devicons')
-	use ('neovim/nvim-lspconfig')
+	use {
+    		"williamboman/mason.nvim",
+    		"williamboman/mason-lspconfig.nvim",
+    		"neovim/nvim-lspconfig",
+	}
 	use {
 		'Shougo/deoplete.nvim',
 		run = ':UpdateRemotePlugins'
 	}
+	use ('mfussenegger/nvim-lsp-compl')
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end

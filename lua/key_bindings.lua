@@ -13,7 +13,9 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
-vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
+vim.keymap.set('n', '<leader>r', builtin.lsp_references, {})
+vim.keymap.set('n', '<leader>d', builtin.lsp_definitions, {})
+
 -- Barbar Key Bidings
 local opts = { noremap = true, silent = true }
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
@@ -37,3 +39,10 @@ map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
 map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
 map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
 map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+
+-- Disable arrows in nmode
+for _, mode in pairs({ 'n', 'v', 'x' }) do
+    for _, key in pairs({ '<Up>', '<Down>', '<Left>', '<Right>' }) do
+        vim.keymap.set(mode, key, '<nop>')
+    end
+end
