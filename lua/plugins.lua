@@ -57,7 +57,6 @@ return packer.startup(function(use)
 	}
 	use ('lewis6991/gitsigns.nvim')
 	use ('romgrk/barbar.nvim')
-	use ('folke/tokyonight.nvim')
 	use ('tpope/vim-fugitive')
 	use ('junegunn/gv.vim')
 	use ('ThePrimeagen/vim-be-good')
@@ -77,6 +76,14 @@ return packer.startup(function(use)
 		run = ':UpdateRemotePlugins'
 	}
 	use ('mfussenegger/nvim-lsp-compl')
+	use {
+		"catppuccin/nvim",
+		as = "catppuccin"
+	}
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires =  {'nvim-tree/nvim-web-devicons', opt = true}
+	}
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
