@@ -1,6 +1,6 @@
 require("plugins")
 require("config")
 require("key_bindings")
-require("plugins_config.nvim_tree_conf")
-require("plugins_config.lsp_conf")
 require("plugins_config.lualine_conf")
+require("plugins_config.lsp_conf")
+require("plugins_config.harpoon_conf")

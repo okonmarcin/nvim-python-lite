@@ -6,6 +6,10 @@ local map = vim.api.nvim_set_keymap
 vim.keymap.set('n', ';', ':')
 map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true, noremap = true})
 map('t', '<Esc>', '<C-\\><C-n>', {})
+
+vim.api.nvim_set_keymap('i', '<A-,>', '<Cmd>ExpandFunction</Cmd>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-,>', '<Cmd>ExpandFunction</Cmd>', { noremap = true, silent = true })
+
 -- Telescope Key Bindings
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})

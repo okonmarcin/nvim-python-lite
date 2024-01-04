@@ -1,5 +1,7 @@
 local fn = vim.fn
 
+
+
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -44,7 +46,6 @@ return packer.startup(function(use)
 	use ('jiangmiao/auto-pairs')
 	use ('scrooloose/nerdcommenter')
 	use ('sbdchd/neoformat')
-	use ('terryma/vim-multiple-cursors')
 	use ('machakann/vim-highlightedyank')
 	use ('nvim-lua/plenary.nvim')
 	use {
@@ -56,7 +57,6 @@ return packer.startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
 	use ('lewis6991/gitsigns.nvim')
-	use ('romgrk/barbar.nvim')
 	use ('tpope/vim-fugitive')
 	use ('junegunn/gv.vim')
 	use ('ThePrimeagen/vim-be-good')
@@ -64,18 +64,7 @@ return packer.startup(function(use)
 		"SmiteshP/nvim-gps",
 		requires = "nvim-treesitter/nvim-treesitter"
 	}
-	use ('nvim-tree/nvim-tree.lua')
 	use ('nvim-tree/nvim-web-devicons')
-	use {
-    		"williamboman/mason.nvim",
-    		"williamboman/mason-lspconfig.nvim",
-    		"neovim/nvim-lspconfig",
-	}
-	use {
-		'Shougo/deoplete.nvim',
-		run = ':UpdateRemotePlugins'
-	}
-	use ('mfussenegger/nvim-lsp-compl')
 	use {
 		"catppuccin/nvim",
 		as = "catppuccin"
@@ -83,6 +72,23 @@ return packer.startup(function(use)
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires =  {'nvim-tree/nvim-web-devicons', opt = true}
+	}
+	use {
+    		"williamboman/mason.nvim",
+    		"williamboman/mason-lspconfig.nvim",
+    		"neovim/nvim-lspconfig",
+	}
+	use ('hrsh7th/cmp-nvim-lsp')
+	use ('hrsh7th/cmp-buffer')
+	use ('hrsh7th/cmp-path')
+	use ('hrsh7th/cmp-cmdline')
+	use ('hrsh7th/nvim-cmp')
+	use ('hrsh7th/cmp-vsnip')
+	use ('hrsh7th/vim-vsnip')
+	use {
+    		"ThePrimeagen/harpoon",
+    		branch = "harpoon2",
+    		requires = { {"nvim-lua/plenary.nvim"} }
 	}
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
