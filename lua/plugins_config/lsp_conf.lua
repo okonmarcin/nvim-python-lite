@@ -75,5 +75,12 @@ require('mason-lspconfig').setup{}
     capabilities = capabilities
   }
   require('lspconfig').lua_ls.setup {
-    capabilities = capabilities
-  }
+    capabilities = capabilities,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
