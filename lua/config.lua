@@ -1,4 +1,4 @@
-vim.cmd.colorscheme "catppuccin-frappe"
+vim.cmd.colorscheme "catppuccin"
 vim.o.background = 'dark'
 vim.o.splitbelow = true
 vim.wo.number = true
