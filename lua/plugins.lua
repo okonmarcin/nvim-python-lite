@@ -84,6 +84,7 @@ return packer.startup(function(use)
 		branch = "harpoon2",
 		requires = { { "nvim-lua/plenary.nvim" } }
 	}
+	use('lukas-reineke/indent-blankline.nvim')
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
