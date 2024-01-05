@@ -35,13 +35,3 @@ for _, mode in pairs({ 'n', 'v', 'x' }) do
 		vim.keymap.set(mode, key, '<nop>')
 	end
 end
-
-
-vim.api.nvim_set_keymap('n', 'jt', '<cmd>lua JumpToLine()<CR>', { noremap = true, silent = true })
-
-function JumpToLine()
-	local line = vim.fn.input('Go to line: ')
-	if line ~= '' then
-		vim.api.nvim_win_set_cursor(0, { tonumber(line), 0 })
-	end
-end
