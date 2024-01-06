@@ -45,6 +45,7 @@ return packer.startup(function(use)
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
+	use('nvim-treesitter/nvim-treesitter-context')
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		requires = { { 'nvim-lua/plenary.nvim' } }
