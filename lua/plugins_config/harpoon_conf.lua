@@ -30,6 +30,6 @@ vim.keymap.set("n", "hs", function() toggle_telescope(harpoon:list()) end,
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = "harpoon",
 	callback = function()
-		vim.opt.winblend = 35
+		vim.opt.winblend = 50
 	end,
 })
