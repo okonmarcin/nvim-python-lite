@@ -8,6 +8,7 @@ require("plugins_config.harpoon_conf")
 require("plugins_config.indent_conf")
 require("plugins_config.noice_conf")
 require("plugins_config.treesitter_conf")
+require("plugins_config.autopairs_conf")
 telescope_builtins = require("telescope.builtin")
 
 local map = vim.keymap.set

@@ -1,6 +1,6 @@
 local fn = vim.fn
-
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+
 if fn.empty(fn.glob(install_path)) > 0 then
 	PACKER_BOOTSTRAP = fn.system({
 		"git",
@@ -36,7 +36,7 @@ packer.init({
 
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself	
-	use('jiangmiao/auto-pairs')
+	use('windwp/nvim-autopairs')
 	use('scrooloose/nerdcommenter')
 	use('sbdchd/neoformat')
 	use('machakann/vim-highlightedyank')
