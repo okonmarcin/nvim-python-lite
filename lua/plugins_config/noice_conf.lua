@@ -7,6 +7,13 @@ require("noice").setup({
 			["cmp.entry.get_documentation"] = true,
 		},
 	},
+	views = {
+		mini = {
+			win_options = {
+				winblend = 0
+			}
+		},
+	},
 	-- you can enable a preset for easier configuration
 	presets = {
 		bottom_search = false, -- use a classic bottom cmdline for search

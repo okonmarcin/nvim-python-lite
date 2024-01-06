@@ -84,6 +84,7 @@ return packer.startup(function(use)
 	use('MunifTanjim/nui.nvim')
 	use('rcarriga/nvim-notify')
 	use('terryma/vim-multiple-cursors')
+	use('tribela/vim-transparent')
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end

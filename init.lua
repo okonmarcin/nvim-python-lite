@@ -16,6 +16,8 @@ vim.wo.number = true
 vim.o.guicursor = 'i:block'
 vim.g.mapleader = ' '
 
+
+
 map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { expr = true, noremap = true })
 map('t', '<Esc>', '<C-\\><C-n>', {})
 map("n", "J", "mzJ`z")
