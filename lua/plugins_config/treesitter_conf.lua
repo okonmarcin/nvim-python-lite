@@ -9,7 +9,8 @@ require 'nvim-treesitter.configs'.setup {
 		"regex",
 		"markdown",
 		"markdown_inline",
-		"bash"
+		"bash",
+		"toml",
 	},
 	sync_install = false,
 	auto_install = true,
