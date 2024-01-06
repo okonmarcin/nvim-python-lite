@@ -1,11 +1,8 @@
 require('mason').setup({
 	ensure_installed = { 'pyright', 'lua_ls' }
 })
-
 require('mason-lspconfig').setup {}
 local cmp = require 'cmp'
-
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -13,6 +10,8 @@ cmp.setup({
 		end,
 	},
 	window = {
+		documentation = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
 		['<C-b>'] = cmp.mapping.scroll_docs(-4),

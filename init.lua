@@ -7,6 +7,7 @@ require("plugins_config.lsp_conf")
 require("plugins_config.harpoon_conf")
 require("plugins_config.indent_conf")
 require("plugins_config.noice_conf")
+require("plugins_config.treesitter_conf")
 telescope_builtins = require("telescope.builtin")
 
 local map = vim.keymap.set
@@ -17,6 +18,7 @@ vim.o.relativenumber = true
 vim.wo.number = true
 vim.o.guicursor = 'i:block'
 vim.g.mapleader = ' '
+vim.g.netrw_banner = false
 
 map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { expr = true, noremap = true })
 map('t', '<Esc>', '<C-\\><C-n>', {})
