@@ -1,8 +1,7 @@
-require("mason")
-require('mason').setup({
-	ensure_installed = { 'pyright', 'lua_ls' }
+require('mason').setup()
+require('mason-lspconfig').setup({
+	ensure_installed = { "lua_ls", "pylsp" }
 })
-require('mason-lspconfig').setup {}
 
 local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -108,7 +107,7 @@ cmp.setup.cmdline(':', {
 	})
 })
 
-lspconfig.pyright.setup {
+lspconfig.pylsp.setup {
 	on_attach = on_attach,
 	flags = {
 		debounce_text_changes = 150,
