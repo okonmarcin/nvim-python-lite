@@ -93,6 +93,8 @@ return packer.startup(function(use)
 	use('rcarriga/nvim-notify')
 	use('terryma/vim-multiple-cursors')
 	use('tribela/vim-transparent')
+	use('~/Projects/req-check')
+	use('linrongbin16/lsp-progress.nvim')
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end

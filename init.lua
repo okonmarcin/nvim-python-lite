@@ -1,5 +1,7 @@
 vim.opt.termguicolors = true
 
+require('req-check').setup()
+
 require("plugins")
 require("plugins_config.telescope_conf")
 require("plugins_config.lualine_conf")
@@ -9,6 +11,8 @@ require("plugins_config.indent_conf")
 require("plugins_config.noice_conf")
 require("plugins_config.treesitter_conf")
 require("plugins_config.autopairs_conf")
+
+
 telescope_builtins = require("telescope.builtin")
 
 local map = vim.keymap.set
@@ -42,3 +46,14 @@ for _, mode in pairs({ 'n', 'v', 'x' }) do
 		map(mode, key, '<nop>')
 	end
 end
+
+vim.diagnostic.config({
+	update_in_insert = true,
+})
+
+vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
+vim.api.nvim_create_autocmd("User", {
+	group = "lualine_augroup",
+	pattern = "LspProgressStatusUpdated",
+	callback = require("lualine").refresh,
+})

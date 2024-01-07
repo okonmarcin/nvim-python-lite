@@ -1,3 +1,4 @@
+require("mason")
 require('mason').setup({
 	ensure_installed = { 'pyright', 'lua_ls' }
 })
