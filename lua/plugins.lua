@@ -36,6 +36,20 @@ packer.init({
 
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself	
+	use {
+		'j-hui/fidget.nvim',
+		tag = "legacy",
+		config = function()
+			require("fidget").setup({
+				notification = {
+					window = {
+						winblend = 0,
+						relative = "editor"
+					}
+				}
+			})
+		end
+	}
 	use('windwp/nvim-autopairs')
 	use('scrooloose/nerdcommenter')
 	use('sbdchd/neoformat')
@@ -81,7 +95,8 @@ return packer.startup(function(use)
 	use('hrsh7th/cmp-cmdline')
 	use('hrsh7th/nvim-cmp')
 	use('hrsh7th/cmp-vsnip')
-	use('hrsh7th/vim-vsnip')
+	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+	use 'L3MON4D3/LuaSnip'  -- Snippets plugin
 	use {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
@@ -94,7 +109,6 @@ return packer.startup(function(use)
 	use('terryma/vim-multiple-cursors')
 	use('tribela/vim-transparent')
 	use('~/Projects/req-check')
-	use('linrongbin16/lsp-progress.nvim')
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
