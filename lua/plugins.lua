@@ -36,20 +36,6 @@ packer.init({
 
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself	
-	use {
-		'j-hui/fidget.nvim',
-		tag = "legacy",
-		config = function()
-			require("fidget").setup({
-				notification = {
-					window = {
-						winblend = 0,
-						relative = "editor"
-					}
-				}
-			})
-		end
-	}
 	use('windwp/nvim-autopairs')
 	use('scrooloose/nerdcommenter')
 	use('sbdchd/neoformat')

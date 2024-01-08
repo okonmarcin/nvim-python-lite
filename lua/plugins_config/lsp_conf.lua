@@ -1,6 +1,6 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
-	ensure_installed = { "lua_ls", "pylsp" }
+	ensure_installed = { "lua_ls", "pyright" }
 })
 
 local on_attach = function(client, bufnr)
@@ -103,22 +103,12 @@ cmp.setup.cmdline(':', {
 	})
 })
 
-lspconfig.pylsp.setup {
+lspconfig.pyright.setup {
 	on_attach = on_attach,
 	flags = {
 		debounce_text_changes = 150,
 	},
 	capabilities = capabilities,
-	single_file_support = false,
-	{
-		python = {
-			analysis = {
-				autoSearchPaths = true,
-				diagnosticMode = "workspace",
-				useLibraryCodeForTypes = true
-			}
-		}
-	}
 }
 
 lspconfig.lua_ls.setup {
@@ -141,3 +131,12 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		vim.lsp.buf.format()
 	end,
 })
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = false,
+    update_in_insert = true, 
+    signs = true,
+    virtual_text = true,
+  }
+)
