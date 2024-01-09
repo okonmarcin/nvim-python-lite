@@ -36,6 +36,7 @@ packer.init({
 
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself	
+	use('mbbill/undotree')
 	use('windwp/nvim-autopairs')
 	use('scrooloose/nerdcommenter')
 	use('sbdchd/neoformat')
@@ -93,7 +94,6 @@ return packer.startup(function(use)
 	use('folke/noice.nvim')
 	use('MunifTanjim/nui.nvim')
 	use('rcarriga/nvim-notify')
-	use('terryma/vim-multiple-cursors')
 	use('tribela/vim-transparent')
 	use('~/Projects/req-check')
 	if PACKER_BOOTSTRAP then
