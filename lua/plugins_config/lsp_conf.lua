@@ -139,9 +139,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.py",
+	command = "%s/\\s\\+$//e"
+})
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
-		underline = false,
+		underline = true,
 		update_in_insert = true,
 		signs = true,
 		virtual_text = true,
