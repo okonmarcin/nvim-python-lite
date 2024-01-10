@@ -1,6 +1,11 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
-	ensure_installed = { "lua_ls", "pyright", "dockerls" }
+	ensure_installed = {
+		"lua_ls",
+		"pyright",
+		"dockerls",
+		"taplo",
+	}
 })
 
 local on_attach = function(client, bufnr)
@@ -125,6 +130,7 @@ lspconfig.lua_ls.setup {
 
 lspconfig.dockerls.setup({})
 
+lspconfig.taplo.setup({})
 
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
