@@ -95,7 +95,6 @@ return packer.startup(function(use)
 	use('MunifTanjim/nui.nvim')
 	use('rcarriga/nvim-notify')
 	use('tribela/vim-transparent')
-	use('~/Projects/req-check')
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end

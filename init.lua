@@ -1,6 +1,4 @@
 vim.opt.termguicolors = true
-require('req-check').setup({})
-
 require("plugins")
 require("plugins_config.telescope_conf")
 require("plugins_config.lualine_conf")
